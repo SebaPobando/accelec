@@ -21,7 +21,7 @@ document.getElementById('enviar').addEventListener('click', function () {
     console.log('Mensaje:', mensaje);
 
     var texto = `¡Hola!, me llamo ${nombre}, quería consultar ${mensaje}`;
-    var url = `https://wa.me/56984230531?text=${texto}`;
+    var url = `https://wa.me/56942054959?text=${texto}`;
 
     console.log('URL:', url);
 
