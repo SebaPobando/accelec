@@ -9,6 +9,11 @@
     margin-right: var(--mb-2);
 }
 
+:root {
+    --header-height: 80px;
+    /* Puedes ajustar el valor según lo que necesites */
+}
+
 .header {
     width: 100%;
     position: fixed;

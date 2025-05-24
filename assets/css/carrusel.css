@@ -44,6 +44,19 @@
 
 .home .caption {
     width: 50%;
+    background-color: rgba(34, 34, 34, 0.7);
+    /* Fondo oscuro semitransparente */
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+}
+
+@media screen and (max-width: 600px) {
+    .home .caption {
+        width: 100%;
+        padding: 20px 10px;
+        box-sizing: border-box;
+    }
 }
 
 .home .caption h1 {
