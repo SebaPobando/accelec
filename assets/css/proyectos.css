@@ -1,0 +1,102 @@
+.carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    min-height: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-slide {
+    display: none;
+    text-align: center;
+    height: 100%;
+}
+
+.carrusel-slide.active {
+    display: block;
+    height: 100%;
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Botones del carrusel */
+.carrusel-prev,
+.carrusel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0093C9;
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0.8;
+    transition: background 0.2s;
+}
+
+.carrusel-prev:hover,
+.carrusel-next:hover {
+    background: #0077a6;
+}
+
+.carrusel-prev {
+    left: 10px;
+}
+
+.carrusel-next {
+    right: 10px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+    .carrusel {
+        max-width: 100%;
+        min-height: 180px;
+        height: 180px;
+    }
+
+    .carrusel-prev,
+    .carrusel-next {
+        font-size: 1.5rem;
+        padding: 0 8px;
+    }
+}
+
+/* Contenedor grid para proyectos */
+.proyectos__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+}
+
+@media (min-width: 900px) {
+    .proyectos__container {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem 3rem;
+    }
+}
+
+.proyecto {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
