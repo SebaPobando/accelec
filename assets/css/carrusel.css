@@ -45,7 +45,6 @@
 .home .caption {
     width: 50%;
     background-color: rgba(34, 34, 34, 0.7);
-    /* Fondo oscuro semitransparente */
     padding: 30px 25px;
     border-radius: 12px;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
@@ -111,6 +110,7 @@
     }
 }
 
+/* Flechas de navegación personalizadas */
 .home .controls .prev,
 .home .controls .next {
     position: absolute;
@@ -123,24 +123,33 @@
     background-color: #00C3F7;
     text-align: center;
     line-height: 40px;
-    font-size: 20px;
+    font-size: 22px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+    user-select: none;
 }
 
 .home .controls .prev:hover,
 .home .controls .next:hover {
     background-color: #a997b2;
+    color: #fff;
 }
 
 .home .controls .prev {
-    left: 0;
+    left: 10px;
 }
 
 .home .controls .next {
-    right: 0;
+    right: 10px;
 }
 
+/* Indicadores numerados */
 .home .indicator {
     position: absolute;
     left: 50%;
@@ -160,10 +169,16 @@
     text-align: center;
     line-height: 25px;
     margin: 0 3px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .home .indicator div.active {
     background-color: #a997b2;
+    color: #fff;
 }
 
 @media screen and (max-width: 600px) {
@@ -174,9 +189,19 @@
     .contenido-slider>div {
         width: 80%;
     }
-}
 
-.controls .prev,
-.controls .next {
-    display: none;
+    .home .controls .prev,
+    .home .controls .next {
+        height: 32px;
+        width: 32px;
+        font-size: 16px;
+        margin-top: -16px;
+    }
+
+    .home .indicator div {
+        width: 20px;
+        height: 20px;
+        font-size: 13px;
+        line-height: 20px;
+    }
 }
