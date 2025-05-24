@@ -5,26 +5,33 @@ const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
 let index = 0;
 
+// Botón anterior
 prev.addEventListener("click", function () {
     prevSlide();
     updateCircleIndicator();
     resetTimer();
 });
 
+// Botón siguiente
 next.addEventListener("click", function () {
     nextSlide();
     updateCircleIndicator();
     resetTimer();
 });
 
-// create circle indicators
+// Crear indicadores numerados
 function circleIndicator() {
+    indicator.innerHTML = "";
     for (let i = 0; i < slides.length; i++) {
         const div = document.createElement("div");
         div.innerHTML = i + 1;
-        div.setAttribute("onclick", "indicateSlide(this)");
-        div.id = i;
-        if (i == 0) {
+        div.addEventListener("click", function () {
+            index = i;
+            changeSlide();
+            updateCircleIndicator();
+            resetTimer();
+        });
+        if (i === 0) {
             div.className = "active";
         }
         indicator.appendChild(div);
@@ -32,13 +39,7 @@ function circleIndicator() {
 }
 circleIndicator();
 
-function indicateSlide(element) {
-    index = element.id;
-    changeSlide();
-    updateCircleIndicator();
-    resetTimer();
-}
-
+// Actualizar el indicador activo
 function updateCircleIndicator() {
     for (let i = 0; i < indicator.children.length; i++) {
         indicator.children[i].classList.remove("active");
@@ -46,8 +47,9 @@ function updateCircleIndicator() {
     indicator.children[index].classList.add("active");
 }
 
+// Slide anterior
 function prevSlide() {
-    if (index == 0) {
+    if (index === 0) {
         index = slides.length - 1;
     } else {
         index--;
@@ -55,8 +57,9 @@ function prevSlide() {
     changeSlide();
 }
 
+// Slide siguiente
 function nextSlide() {
-    if (index == slides.length - 1) {
+    if (index === slides.length - 1) {
         index = 0;
     } else {
         index++;
@@ -64,6 +67,7 @@ function nextSlide() {
     changeSlide();
 }
 
+// Cambiar slide visible
 function changeSlide() {
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.remove("active");
@@ -71,14 +75,13 @@ function changeSlide() {
     slides[index].classList.add("active");
 }
 
+// Reiniciar temporizador de autoplay
 function resetTimer() {
-    // when click to indicator or controls button 
-    // stop timer 
     clearInterval(timer);
-    // then started again timer
     timer = setInterval(autoPlay, 8000);
 }
 
+// Autoplay
 function autoPlay() {
     nextSlide();
     updateCircleIndicator();
