@@ -1,0 +1,119 @@
+/* Sección de contacto directo tipo tarjetas */
+.contacto-directo {
+    background: rgba(34, 34, 34, 0.85);
+    padding: 70px 0 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto-directo__container {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: left;
+}
+
+.contacto-directo__heading h6 {
+    color: #00C3F7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contacto-directo__heading h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.contacto-directo__desc {
+    color: #e0e0e0;
+    font-size: 1.08rem;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.contacto-directo__cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.contacto-directo__card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+    padding: 32px 24px 24px 24px;
+    flex: 1 1 220px;
+    min-width: 220px;
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contacto-directo__icon {
+    background: #0093C9;
+    color: #fff;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 18px;
+}
+
+.contacto-directo__card h4 {
+    color: #222;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.contacto-directo__card span,
+.contacto-directo__card a {
+    color: #444;
+    font-size: 1rem;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.contacto-directo__card a:hover {
+    color: #ff7f32;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contacto-directo__container {
+        max-width: 98vw;
+    }
+
+    .contacto-directo__cards {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .contacto-directo__cards {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .contacto-directo__card {
+        max-width: 100%;
+    }
+
+    .contacto-directo__heading h2 {
+        font-size: 1.3rem;
+    }
+}
